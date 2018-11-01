@@ -7,17 +7,17 @@ var state = {
     computer: rockPaperScissors[Math.floor(Math.random()*3)],
     playerChoice:true,
     isGameOver:false,
-    gameStatus:''
+    gameStatus:'',
 }
 
 console.log(state.computer);
 
 
 function setPlayer(weapon){
-    console.log(weapon);
+    play(weapon);
     state.player=weapon;
-    content.innerHTML = renderGame(state);
-
+    
+    
 }
 
 
@@ -30,29 +30,30 @@ function play(type){
    
    
     computer= type.computer;
-    if (type.player=="rock"){
-        if(computer=="rock"){
-             type.gameStatus== "tie";
-        }else if(computer=="paper") {
-            type.gameStatus== "lose";
-        }else if(computer =="scissors"){
-            type.gameStatus= "win";
+    console.log(state.computer);
+    if (type=="rock"){
+        if(state.computer=="rock"){
+             state.gameStatus= "tie";
+        }else if(state.computer=="paper") {
+            state.gameStatus= "lose";
+        }else if(state.computer =="scissors"){
+            state.gameStatus= "win";
         }
-    } else if (type.player=="paper"){
-        if(computer=="rock"){
-            type.gameStatus== "win";
+    } else if (type=="paper"){
+        if(state.computer=="rock"){
+            state.gameStatus= "win";
         }else if(computer=="paper"){
-            type.gameStatus== "tie";
-        }else if(computer=="scissors"){
-            type.gameStatus== "lose";
+            state.gameStatus= "tie";
+        }else if(state.computer=="scissors"){
+            state.gameStatus= "lose";
         }
-    } else if (type.player=="scissors"){
-        if(computer=="rock"){
-            type.gameStatus= "lose";
-        }else if(computer=="paper"){
-            type.gameStatus== "win";
-        }else if(computer=="scissors"){
-            type.gameStatus== "tie";
+    } else if (type=="scissors"){
+        if(state.computer=="rock"){
+            state.gameStatus= "lose";
+        }else if(state.computer=="paper"){
+            state.gameStatus= "win";
+        }else if(state.computer=="scissors"){
+            state.gameStatus= "tie";
         }
     }
   
@@ -63,7 +64,7 @@ function play(type){
 
 function renderGame(game) {
     // Change this render function to use the "game" parameter
-   console.log("hey")
+  
     
   
     
@@ -72,15 +73,15 @@ function renderGame(game) {
         `<div class="container d-flex flex-column justify-content-start align-items-center">
             <h4>Choose your weapon:</h4>
             <div class="w-50 text-center">
-                <button onclick="setPlayer("rock")" class="btn btn-primary">Rock</button>
-                <button onclick="setPlayer("paper")" class="btn btn-primary">Paper</button>
-                <button onclick="setPlayer("scissors")" class="btn btn-primary">Scissors</button>
+                <button onclick="setPlayer('rock')" class="btn btn-primary">Rock</button>
+                <button onclick="setPlayer('paper')" class="btn btn-primary">Paper</button>
+                <button onclick="setPlayer('scissors')" class="btn btn-primary">Scissors</button>
             </div>
             <div class="d-flex justify-content-center">
             <div class="m-5">You played: <b>${game.player}</b></div>
             <div class="m-5">The computer played: <b>${game.computer}</b></div>
         </div>
-        <h1 class="text-center">${game.gameStatus}<h1>
+        <h1 class="text-center">${game.gameStatus}</h1>
     </div>`
 
     return gameHTML;
