@@ -87,17 +87,3 @@ function renderGame(game) {
     return gameHTML;
 }
 content.innerHTML = renderGame(state);
-/*function renderGameStatus(){
-    var gameOverScreen= "";
-    if (didIWin=="lost") {
-
-        gameOverScreen += "lost";
-} else if (didIWin=="tie"){
-    gameOverScreen += "tie";
-} else  {
-    gameOverScreen += "won";
-}
-console.log(gameOverScreen);
-return gameOverScreen;
-
-}*/

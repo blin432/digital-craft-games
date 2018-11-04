@@ -19,15 +19,6 @@ function valueAtPosition(row,column){
     console.log(value);
 }
 
-/*function playerTurn(row,column){
-    if(ticTacToe.turn=="x"){
-        ticTacToe.board[row][column]="x";
-    }else if (ticTacToe.turn=="o"){
-        ticTacToe.board[row][column]="o";
-    }
-    renderGame();
-
-}*/
 
 function setValueAtPosition(row,column){
     
@@ -35,8 +26,6 @@ function setValueAtPosition(row,column){
         return;
     }
    
-
-
     if(ticTacToe.player=="x"){
         ticTacToe.board[row][column]="x";
         console.log(ticTacToe.board[row][column]);
