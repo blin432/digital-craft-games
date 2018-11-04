@@ -14,9 +14,9 @@ console.log(state.computer);
 
 
 function setPlayer(weapon){
-    play(weapon);
+   
     state.player=weapon;
-    
+     play(weapon);
     
 }
 
@@ -33,27 +33,27 @@ function play(type){
     console.log(state.computer);
     if (type=="rock"){
         if(state.computer=="rock"){
-             state.gameStatus= "tie";
+             state.gameStatus= "You tied!";
         }else if(state.computer=="paper") {
-            state.gameStatus= "lose";
+            state.gameStatus= "You lost!";
         }else if(state.computer =="scissors"){
-            state.gameStatus= "win";
+            state.gameStatus= "You won!";
         }
     } else if (type=="paper"){
         if(state.computer=="rock"){
-            state.gameStatus= "win";
+            state.gameStatus= "You won!";
         }else if(computer=="paper"){
-            state.gameStatus= "tie";
+            state.gameStatus= "You tied!";
         }else if(state.computer=="scissors"){
-            state.gameStatus= "lose";
+            state.gameStatus= "You lost!";
         }
     } else if (type=="scissors"){
         if(state.computer=="rock"){
-            state.gameStatus= "lose";
+            state.gameStatus= "You lost!";
         }else if(state.computer=="paper"){
-            state.gameStatus= "win";
+            state.gameStatus= "You won!";
         }else if(state.computer=="scissors"){
-            state.gameStatus= "tie";
+            state.gameStatus= "You tied!";
         }
     }
   
